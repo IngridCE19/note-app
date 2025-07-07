@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <!-- Main navigation -->
+    <header>
+        <nav aria-label="Main navigation">
+        <img src="img/clip.png" alt="App logo" class="icon" />
+        <ul class="nav-menu">
+            <li><a href="index.html" aria-label="Home"><img src="img/home.png" alt="Home icon" /></a></li>
+            <li><a href="task.html" aria-label="Tasks"><img src="img/check.png" alt="Tasks icon" /></a></li>
+            <li><a href="search.html" aria-label="Search"><img src="img/search.png" alt="Search icon" /></a></li>
+            <li><a href="settings.html" aria-label="Settings"><img src="img/setting.png" alt="Settings icon" /></a></li>
+            <li><a href="user.html" aria-label="User Profile"><img src="img/avatar.png" alt="User icon" /></a></li>
+        </ul>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <h1>Welcome, user!</h1>
+        <blockquote cite="https://www.brainyquote.com/quotes/steve_jobs_416859">
+        “The only way to do great work is to love what you do.” — Steve Jobs
+        </blockquote>
+    </main>
+
+    <!-- Floating button to open options -->
+    <button id="open-options" aria-label="Open menu options">+</button>
+
+    <!-- Options Popup -->
+    <div id="options-modal" class="hidden" role="dialog" aria-modal="true" aria-labelledby="options-title">
+        <div class="modal-content">
+        <h2 id="options-title">Options</h2>
+        <button id="close-options" aria-label="Close options menu">
+            <img src="img/close.png" alt="Close" />
+        </button>
+
+        <div class="option-item">
+            <img src="img/folder.png" alt="New folder" />
+            <span>New folder</span>
+        </div>
+        <div class="option-item">
+            <img src="img/bitmap.png" alt="New note" />
+            <span>New note</span>
+        </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
