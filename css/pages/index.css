@@ -1,0 +1,13 @@
+/*Body*/
+body {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    height: 100vh;
+}
+
+blockquote {
+    color: #a09786;
+    margin: 10px 0;
+}
+

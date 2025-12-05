@@ -1,0 +1,33 @@
+nav {
+    padding: 20px 40px;
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+nav img {
+    width: 25px;
+    padding: 15px;
+}
+
+.nav-menu {
+    width: 40px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.first-nav,
+.second-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fffdf9;
+    border-radius: 50px;
+    height: auto;
+    padding: 20px 0;
+    margin: 15px 0;
+}

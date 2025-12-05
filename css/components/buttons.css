@@ -1,0 +1,10 @@
+.button-options-home {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    border: none;
+    margin: 20px 0;
+    background-color: #d2c09b;
+    font-size: 20px;
+    color: white;
+}
