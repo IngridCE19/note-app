@@ -4,51 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create account</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages/signup.css">
 </head>
 <body>
-    <p>Take Notes for your classes</p>
-
-    <main>
-        <section class="signup-form">
-            <div class="logo">
-                <img src="img/clip.png" alt="icon" class="icon">
-                <p>app-note</p>
-            </div>
-            <h1>Create an account</h1>
-            <form action="#" method="post" class="signup-form">
-                <div class="form-group">
-                    <label for="first-name">First name</label>
-                    <input type="text" id="first-name" name="first-name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="last-name">Last name</label>
-                    <input type="text" id="last-name" name="last-name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-
-                <div class="form-group">
-                    <input type="checkbox" id="terms-conditions" name="terms-conditions" required>
-                    <label for="terms-conditions">I agree to the <a href="#">Terms & Conditions</a></label>
-                </div>
-
-                <button type="submit">Create account</button>
-
-                <p>Already have an account? <a href="login.html">Log in</a></p>
-            </form>
-        </section>
-    </main>
-
+    <div class="container">
+        <div class="col left">
+            <p class="message">Take Notes for your classes</p>
+        </div>
+        <div class="col right">
+            <main>
+                <section class="signup-form">
+                    <div class="logo">
+                        <img src="assets/clip.png" alt="icon" class="icon">
+                        <p>app-note</p>
+                    </div>
+                    <h1>Create an account</h1>
+                    <form action="#" method="post" class="signup-form">
+                        <div class="group-signup">
+                            <input type="text" placeholder="First name" id="first-name" name="first-name" required>
+                            <input type="text" placeholder="Last name" id="last-name" name="last-name" required>
+                        </div>
+                        <input type="email" placeholder="Email" id="email" name="email" required>
+                        <input type="password" placeholder="Password" id="password" name="password" required>
+                        <div class="group-signup">
+                            <input type="checkbox" id="terms-conditions" name="terms-conditions" required>
+                            <label for="terms-conditions">I agree to the <a href="#" class="styleTerms">Terms & Conditions</a></label>
+                        </div>
+                        <button type="submit" class="createAccount">Create account</button>
+                        <p class="createNewAccount">Already have an account? <a href="login.html" class="login">Log in</a></p>
+                    </form>
+                </section>
+            </main>
+        </div>
+    </div>
     <script>
         document.getElementById('signup-form').addEventListener('submit', function(e) {e.preventDefault();
             window.location.href = 'index.html';

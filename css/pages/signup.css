@@ -1,0 +1,111 @@
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.col {
+    flex: 1;
+}
+
+.left {
+    background-color: #212844;
+}
+
+main {
+    padding: 70px 90px;
+}
+
+.message {
+    font-size: 90px;
+    font-weight: 700;
+    color: #acb4d2;
+    padding: 120px 80px;
+}
+
+.logo {
+    display: flex;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    color: #a09786;
+    margin: 0;
+    height: 30px;
+    padding: 5px 0 5px 0;
+}
+
+p {
+    padding-left: 10px;
+    margin: 0;
+}
+
+.icon {
+    height: 30px;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 0;
+    padding: 5px 0 5px 0;
+}
+
+.signup-form {
+    color: #a09786;
+    font-weight: 500;
+    display: grid;
+    align-items: center;
+    width: 100%;
+    padding: 5px 0 5px 0;
+}
+
+input {
+    border-radius: 20px;
+    border-style: none;
+    background-color: #c6bdab;
+    height: 40px;
+    margin: 10px;
+    font-style: italic;
+}
+
+input:focus {
+    outline: none; /* Opcional: quita el borde azul por defecto del navegador */
+    border-style: solid;
+    border-color: #a09786;
+    border-width: 2px;
+}
+
+.group-signup {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+button {
+    background-color: #d2c09b;
+    color: #fff;
+    border-style: none;
+    border-radius: 20px;
+    height: 40px;
+    margin: 10px;
+    font-weight: 600;
+    padding: 5px 0 5px 0;
+}
+
+.createAccount{
+    padding: 5px 0 5px 0;
+    font-size: 15px;
+    height: 45px;
+} 
+
+.createNewAccount {
+    text-align: center;
+    padding: 5px 0 5px 0;
+}  
+
+.login {
+    font-weight: 800;
+    color: inherit;
+}
+
+.styleTerms {
+    color: #4f65b9;
+}
