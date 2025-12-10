@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    height: 100vh;
+    background-color: #f4f1dd;
+    font-family: Open Sans, sans-serif;
+}
+
+h1 {
+    color: #656058;
+}

@@ -1,5 +1,8 @@
+/*General*/
 @import url('layout.css');
 @import url('reset.css');
+
+/*Components*/
 @import url('components/navbar.css');
 @import url('components/buttons.css');
 
