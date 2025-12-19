@@ -5,6 +5,8 @@
 /*Components*/
 @import url('components/navbar.css');
 @import url('components/buttons.css');
+@import url('components/modals.css');
+
 
 /*Fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
