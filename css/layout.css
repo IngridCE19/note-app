@@ -11,3 +11,7 @@ h1, h2, span{
     color: #656058;
     font-family: Open Sans, sans-serif;
 }
+
+a {
+    all: unset;
+}
