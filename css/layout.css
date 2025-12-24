@@ -2,12 +2,13 @@ body {
     display: flex;
     flex-direction: row;
     margin: 0;
+    width: 100%;
     height: 100vh;
     background-color: #f4f1dd;
     font-family: Open Sans, sans-serif;
 }
 
-h1, h2, span{
+h1, h2, h3, span, p{
     color: #656058;
     font-family: Open Sans, sans-serif;
 }
