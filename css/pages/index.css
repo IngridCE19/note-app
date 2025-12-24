@@ -6,3 +6,33 @@ blockquote {
 h1 {
     margin: 30px 0;
 }
+
+.files {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+}
+
+.note-container {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.note-card {
+    margin: 0 20px;
+    width: 10%;
+}
+
+h3 {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.icon-note {
+    width: 90px;
+}

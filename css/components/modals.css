@@ -8,7 +8,7 @@
 .show {
     opacity: 1;
     visibility: visible;
-    transform: translate(-120%, 120%);
+    transform: translate(-15%, 120%);
     background-color: rgb(210, 192, 155, 0.5);
     border-radius: 20px;
     padding: 20px;

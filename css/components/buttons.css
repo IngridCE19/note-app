@@ -3,6 +3,7 @@
     height: 100px;
     border-radius: 20px;
     border: none;
+    flex-shrink: 0; /*Flexbox: le ordena que no se modifiquen las medidas para adaptarse al espacio*/
     margin: 20px 0;
     background-color: #d2c09b;
     font-size: 20px;
