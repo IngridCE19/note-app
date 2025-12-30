@@ -13,11 +13,11 @@
 
         <ul class="sidebars">
             <div class="first-sidebars">
-                <button class="sidebars-btn"><img src="assets/add-post.png" class="img-sidebars" alt="Add files"></button>
+                <button id="insert-btn" class="sidebars-btn"><img src="assets/add-post.png" class="img-sidebars" alt="Add files"></button>
                 <button class="sidebars-btn"><img src="assets/h1.png" class="img-sidebars" alt="H1"></button>
                 <button class="sidebars-btn"><img src="assets/h2.png" class="img-sidebars" alt="H2"></button>
                 <button class="sidebars-btn"><img src="assets/h3.png" class="img-sidebars" alt="H3"></button>
-                <button class="sidebars-btn"><img src="#" class="img-sidebars" alt="Text color"></button>
+                <button class="sidebars-btn"><img src="/assets/fuente.png" class="img-sidebars" alt="Text color"></button>
             </div>
             <div class="second-sidebars">
                 <button id="save-btn" class="sidebars-btn"><img src="assets/save-as.png" class="img-sidebars" alt="Save file"></button>
@@ -30,7 +30,10 @@
         <div id="note-content" class="editable-sheet" contenteditable="true">Write here...</div>
     </main>
 
+    <div id="modal" role="dialog" aria-modal="true" aria-labelledby="options-title"></div>
+
     <script src="js/spacework.js"></script>
     <script src="js/components/navbar.js"></script>
+    <script src="js/components/modals.js"></script>
 </body>
 </html>

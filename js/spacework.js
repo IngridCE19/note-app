@@ -1,3 +1,4 @@
+/*Abrir una nota desde el index*/
 document.addEventListener('DOMContentLoaded', () => {
     /*Buscar una nota por su ID*/
 
@@ -35,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /*Guardar nota*/
-
 const saveButton = document.getElementById('save-btn');
 
 saveButton.addEventListener('click', () => {

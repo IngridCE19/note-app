@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.innerHTML = `
             <img src="assets/bitmap.png" class="icon-note" alt="icon note">
             <h3>${noteData.title}</h3>
+            <p>${noteData.date}</p>
         `;
 
         card.addEventListener('click', () => {
