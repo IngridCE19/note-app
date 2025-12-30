@@ -13,7 +13,7 @@ fetch("/components/modals.html")
 function eventosModales() {
     const modalBase = document.getElementById("modal");
 
-    /*Menu para crear una nueva nota/folder*/
+    /*Boton menu para crear una nueva nota/folder*/
     const btnNewNote = document.getElementById('button-new-note');
     const modalNewNote = document.getElementById('container-new-note');
 
@@ -23,25 +23,36 @@ function eventosModales() {
         });
     }
 
-    /*Menu para insertar*/
+    /*Boton menu para insertar media*/
     const btnInsert = document.getElementById('insert-btn');
     const modalInsert = document.getElementById('container-insert');
 
     if (btnInsert && modalInsert) {
         btnInsert.addEventListener('click', () => {
             modalInsert.classList.toggle('show');
-        })
+        });
+    }
+
+    /*Boton menu para modificar el formato*/
+    const btnFormat = document.getElementById('format-btn');
+    const modalFormat = document.getElementById('container-format');
+
+    if (btnFormat && modalFormat) {
+        btnFormat.addEventListener('click', () => {
+            modalFormat.classList.toggle('show');
+        });
     }
 
     /*Boton cerrar*/ 
-    const closeButtons = document.querySelectorAll('#close-options');
-    const btnModal = document.querySelectorAll('.hiden');
+    const closeButtons = document.querySelectorAll('.close-btn');
     
     closeButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            btnModal.forEach(btn => {
-                btn.classList.remove('show');
-            })
+            const modalMenu = btn.closest('.hiden');
+
+            if (modalMenu) {
+                modalMenu.classList.remove('show');
+            }
         });
     });
 }

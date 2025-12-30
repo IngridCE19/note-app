@@ -26,7 +26,8 @@
     padding-right: 80px;
 }
 
-.close-options, .new-folder, .new-note, .new-image, .new-video, .new-audio {
+.button, 
+.btn-icon {
     border: none;
     background-color: rgb(210, 192, 155, 0);
     height: 20px;
