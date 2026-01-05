@@ -26,6 +26,11 @@
     padding-right: 80px;
 }
 
+.name-title {
+    font-size: 1pc;
+    min-width: 170px;
+}
+
 .button, 
 .btn-icon {
     border: none;

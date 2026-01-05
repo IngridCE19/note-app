@@ -1,6 +1,6 @@
 export const notesView = {
     //Muestra tarjetas de las notas guardadas en el index.html
-    renderList(notes, containerId, onClickNote) {
+    renderList(notes, containerId, onClickNote, onRightClick) {
         const container = document.getElementById(containerId);
         if (!container) return;
 
@@ -17,8 +17,26 @@ export const notesView = {
                 <p>${note.date}</p>
             `;
             card.onclick = () => onClickNote(note.id);
+
+            card.oncontextmenu = (event) => {
+                event.preventDefault();
+                onRightClick(note.id, event);
+            }; 
+            
             container.appendChild(card);
         });
+
+        // Muestra el titulo en un modal para cada nota
+        const titleModal = (event, noteId) => {
+            event.preventDefault();
+
+            const note = notesModel.getById(noteId);
+
+            if (note) {
+                const titleNote = document.getElementById('options-title');
+                titleNote.innerText = note.id;
+            }
+        }
     },
 
     // Recibe la nota (objeto 'my-note') e inyecta el valor de las claves title y content en los elementos con el id correspondiente

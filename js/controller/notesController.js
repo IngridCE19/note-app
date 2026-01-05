@@ -3,12 +3,25 @@ import { notesView } from '../view/notesView.js';
 
 export const notesController = {
     // Obtiene las notas mediante el modelo y las muestra con la vista
-    initIndex() {
+    initIndex(event) {
         const notes = notesModel.getAll();
+
         // El metodo renderList recibe todas las notas guardadas, las inyecta en el elemento con el id 'note-container' y ejecuta una arrow function en caso de dar clic en la tarjeta. Esa funcion abre una ventana a la pagina spacework.html, en donde la url contiene el id para inyectar la nota
-        notesView.renderList(notes, 'note-container', (id) => {
-            window.location.href = `spacework.html?id=${id}`;
-        });
+        notesView.renderList(
+            notes, 
+            'note-container', 
+            (id) => {
+                window.location.href = `spacework.html?id=${id}`;
+            },
+            (id, event) => {
+                const note = notesModel.getById(id);
+                const titleModal = document.getElementById('name-file');
+                
+                if (note && titleModal) {
+                    titleModal.innerText = note.title;
+                }
+            }
+        );
     }, 
 
     // Lógica para abrir el editor con la nota mediante el id de la url (spacework.html)
@@ -18,12 +31,13 @@ export const notesController = {
         console.log(urlParams);
         console.log(id);
 
-        // Obtiene la nota buscandola mediante su id e inyecta su contenido en el editor
+        // Obtiene la nota mediante su id e inyecta su contenido en el editor
         if (id) {
             const note = notesModel.getById(id);
             notesView.fillEditor(note);
         }
 
+        /*Guardar nota*/
         const saveBtn = document.getElementById('save-btn');
         if (saveBtn) {
             saveBtn.onclick = () => {

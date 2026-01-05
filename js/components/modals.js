@@ -10,10 +10,11 @@ fetch("/components/modals.html")
 })
 .catch(error => console.error("Error cargando el modal: ", error));
 
+/*Funcion para los eventos de cada modal */
 function eventosModales() {
     const modalBase = document.getElementById("modal");
 
-    /*Boton menu para crear una nueva nota/folder*/
+    /*Boton menu para crear una nueva nota/folder en el dashboard*/
     const btnNewNote = document.getElementById('button-new-note');
     const modalNewNote = document.getElementById('container-new-note');
 
@@ -23,7 +24,7 @@ function eventosModales() {
         });
     }
 
-    /*Boton menu para insertar media*/
+    /*Boton menu para insertar contenido en el editor*/
     const btnInsert = document.getElementById('insert-btn');
     const modalInsert = document.getElementById('container-insert');
 
@@ -33,14 +34,24 @@ function eventosModales() {
         });
     }
 
-    /*Boton menu para modificar el formato*/
+    /*Boton menu para modificar el formato en el editor*/
     const btnFormat = document.getElementById('format-btn');
     const modalFormat = document.getElementById('container-format');
-
+    
     if (btnFormat && modalFormat) {
         btnFormat.addEventListener('click', () => {
             modalFormat.classList.toggle('show');
         });
+    }
+
+    /* Click derecho para ver las operaciones sobre una nota/folder */
+    const btnCardNote = document.getElementById('note-container');
+    const modalNoteOptions = document.getElementById('container-note-options');
+
+    if (btnCardNote && modalNoteOptions) {
+        btnCardNote.addEventListener('contextmenu', () => {
+            modalNoteOptions.classList.toggle('show');
+        })
     }
 
     /*Boton cerrar*/ 
