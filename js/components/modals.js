@@ -44,7 +44,7 @@ function eventosModales() {
         });
     }
 
-    /* Click derecho para ver las operaciones sobre una nota/folder */
+    /* Click derecho para ver menu de las operaciones sobre una nota/folder */
     const btnCardNote = document.getElementById('note-container');
     const modalNoteOptions = document.getElementById('container-note-options');
 

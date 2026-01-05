@@ -3,7 +3,7 @@ import { notesView } from '../view/notesView.js';
 
 export const notesController = {
     // Obtiene las notas mediante el modelo y las muestra con la vista
-    initIndex(event) {
+    initIndex() {
         const notes = notesModel.getAll();
 
         // El metodo renderList recibe todas las notas guardadas, las inyecta en el elemento con el id 'note-container' y ejecuta una arrow function en caso de dar clic en la tarjeta. Esa funcion abre una ventana a la pagina spacework.html, en donde la url contiene el id para inyectar la nota
@@ -13,12 +13,23 @@ export const notesController = {
             (id) => {
                 window.location.href = `spacework.html?id=${id}`;
             },
-            (id, event) => {
+            (id) => {
                 const note = notesModel.getById(id);
                 const titleModal = document.getElementById('name-file');
                 
                 if (note && titleModal) {
                     titleModal.innerText = note.title;
+                }
+
+                const deleteFile = document.getElementById('delete-file');
+                if (deleteFile) {
+                    deleteFile.onclick = () => { 
+                        idNotesSelection = note.id;
+                        notesModel.delete(idNotesSelection);
+
+                        
+                        this.initIndex();
+                    }
                 }
             }
         );
@@ -48,3 +59,5 @@ export const notesController = {
         }
     }
 };
+
+let idNotesSelection = null;

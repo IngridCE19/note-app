@@ -22,21 +22,9 @@ export const notesView = {
                 event.preventDefault();
                 onRightClick(note.id, event);
             }; 
-            
+
             container.appendChild(card);
         });
-
-        // Muestra el titulo en un modal para cada nota
-        const titleModal = (event, noteId) => {
-            event.preventDefault();
-
-            const note = notesModel.getById(noteId);
-
-            if (note) {
-                const titleNote = document.getElementById('options-title');
-                titleNote.innerText = note.id;
-            }
-        }
     },
 
     // Recibe la nota (objeto 'my-note') e inyecta el valor de las claves title y content en los elementos con el id correspondiente
