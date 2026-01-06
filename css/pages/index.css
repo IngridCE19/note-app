@@ -22,11 +22,6 @@ h1 {
     gap: 15px;
 }
 
-.note-card {
-    margin: 0 20px;
-    width: 10%;
-}
-
 h3, p{
     margin: 0;
     font-size: 12px;
