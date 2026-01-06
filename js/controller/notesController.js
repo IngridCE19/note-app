@@ -27,7 +27,6 @@ export const notesController = {
                         idNotesSelection = note.id;
                         notesModel.delete(idNotesSelection);
 
-                        
                         this.initIndex();
                     }
                 }

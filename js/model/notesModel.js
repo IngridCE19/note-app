@@ -1,7 +1,7 @@
 export const notesModel = {
     // Obtener todas las notas
     getAll() {
-        return JSON.parse(localStorage.getItem('my-notes') || []);
+        return JSON.parse(localStorage.getItem('my-notes') || '[]');
     },
 
     // Obtener una nota por ID
