@@ -1,20 +1,8 @@
-/*Insertar modal y configurar los eventos en el orden correcto*/
-fetch("/components/modals.html")
-    .then(res => res.text())
-    .then(html => {
-        /*Insertamos el archivo modals.html*/
-        const modalBase = document.getElementById("modal");
-        modalBase.innerHTML = html;
-        
-        eventosModales();
-})
-.catch(error => console.error("Error cargando el modal: ", error));
-
 /*Funcion para los eventos de cada modal */
-function eventosModales() {
+export function initModalEvents() {
     const modalBase = document.getElementById("modal");
 
-    /*Boton menu para crear una nueva nota/folder en el dashboard*/
+    /* Boton menu para crear un nuevo archivo en index.html */
     const btnNewNote = document.getElementById('button-new-note');
     const modalNewNote = document.getElementById('container-new-note');
 
@@ -24,7 +12,7 @@ function eventosModales() {
         });
     }
 
-    /*Boton menu para insertar contenido en el editor*/
+    /*Boton menu para insertar contenido multimedia en el editor*/
     const btnInsert = document.getElementById('insert-btn');
     const modalInsert = document.getElementById('container-insert');
 
@@ -44,7 +32,7 @@ function eventosModales() {
         });
     }
 
-    /* Click derecho para ver menu de las operaciones sobre una nota/folder */
+    /* Click derecho para ver menu de las operaciones sobre un archivo en index.html */
     const btnCardNote = document.getElementById('note-container');
     const modalNoteOptions = document.getElementById('container-note-options');
 
@@ -54,7 +42,7 @@ function eventosModales() {
         })
     }
 
-    /*Boton cerrar*/ 
+    /* Boton cerrar modal */ 
     const closeButtons = document.querySelectorAll('.close-btn');
     
     closeButtons.forEach(btn => {

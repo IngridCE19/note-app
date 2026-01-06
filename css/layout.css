@@ -1,4 +1,10 @@
 body {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+body.is-ready {
+    opacity: 1;
     display: flex;
     flex-direction: row;
     margin: 0;
