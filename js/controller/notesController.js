@@ -27,6 +27,10 @@ export const notesController = {
                         idNotesSelection = note.id;
                         notesModel.delete(idNotesSelection);
 
+                        /* Cerrar modal */
+                        const modalNoteOptions = document.getElementById('container-note-options');
+                        modalNoteOptions.classList.remove('show');
+
                         this.initIndex();
                     }
                 }
