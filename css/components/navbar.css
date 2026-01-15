@@ -1,28 +1,32 @@
 #navbar {
-    padding: 30px 40px;
-    min-width: auto;
-    max-height: 65%;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
-.icon {
+.icon-btn {
     width: 25px;
     padding: 15px;
 }
 
-.hamburger {
+.hamburger-btn {
     border: none;
-    background-color: rgb(255, 255, 255, 0);
+    background-color: transparent;
+    cursor: pointer;
+    height: auto;
+}
+
+/* Ocultar barra de navegacion */
+.nav-menu.hidden {
+    display: none;
 }
 
 .nav-menu {
-    width: 40px;
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 40px;
 }
 
 .first-nav,
@@ -30,14 +34,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background-color: #fffdf9;
     border-radius: 50px;
-    height: auto;
-    padding: 20px 0;
     margin: 15px 0;
-}
-
-.active {
-    visibility: hidden;
 }

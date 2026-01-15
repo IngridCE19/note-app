@@ -4,6 +4,6 @@ export function initNavbarEvents() {
     const navMenu = document.getElementById('nav-menu');
 
     if (hamburgerBoton && navMenu) {
-        hamburgerBoton.onclick = () => navMenu.classList.toggle('active');
+        hamburgerBoton.onclick = () => navMenu.classList.toggle('hidden');
     }
 }
