@@ -45,7 +45,7 @@ export function initModalEvents() {
     
     closeButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            const modalMenu = btn.closest('.hiden');
+            const modalMenu = btn.closest('.hidden');
 
             if (modalMenu) {
                 modalMenu.classList.remove('show');

@@ -3,16 +3,22 @@ blockquote {
     margin: 10px 0;
 }
 
-h1 {
-    margin: 30px 0;
+.welcome {
+    margin: 10px 0;
+    padding: 0;
+    font-size: 200%;
+    font-weight: 700;
 }
 
 .files {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
     gap: 15px;
-    width: 100%;
+}
+
+.button-new-note {
+    min-width: auto;
+    min-height: auto;
 }
 
 .note-container {

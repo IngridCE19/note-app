@@ -1,4 +1,4 @@
-.hiden {
+.hidden {
     opacity: 0;
     visibility: hidden;
     transform: translateY(0px);
@@ -33,12 +33,12 @@
 
 .button, 
 .btn-icon {
+    padding-right: 10px;
     border: none;
     background-color: rgb(210, 192, 155, 0);
     height: 20px;
 }
 
-span {
-    padding-left: 10px;
+.text-modal {
     font-size: 18px;
 }
