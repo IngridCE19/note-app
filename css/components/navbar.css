@@ -18,15 +18,21 @@
 }
 
 /* Ocultar barra de navegacion */
-.nav-menu.hidden {
-    display: none;
-}
-
 .nav-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.3s ease-in-out;
     list-style: none;
     padding: 0;
     margin: 0;
     width: 40px;
+}
+
+.nav-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 0);
 }
 
 .first-nav,
