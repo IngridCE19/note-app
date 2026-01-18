@@ -12,9 +12,11 @@ export const notesView = {
             const card = document.createElement('div');
             card.className = 'note-card';
             card.innerHTML = `
-                <img src="assets/bitmap.png" class="icon-note" alt="icon note">
-                <h3>${note.title}</h3>
-                <p>${note.date}</p>
+                <button>
+                    <img src="assets/bitmap.png" class="icon-note" alt="icon note">
+                    <h3>${note.title}</h3>
+                    <p>${note.date}</p>
+                </button>
             `;
             card.onclick = () => onClickNote(note.id);
 

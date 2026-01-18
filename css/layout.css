@@ -22,3 +22,9 @@ h1, h2, h3, span, p{
 a {
     all: unset;
 }
+
+button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
