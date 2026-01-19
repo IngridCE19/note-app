@@ -9,7 +9,7 @@ export const notesController = {
         // El metodo renderList recibe todas las notas guardadas, las inyecta en el elemento con el id 'note-container' y ejecuta una arrow function en caso de dar clic en la tarjeta. Esa funcion abre una ventana a la pagina spacework.html, en donde la url contiene el id para inyectar la nota
         notesView.renderList(
             notes, 
-            'note-container', 
+            'files', 
             (id) => {
                 window.location.href = `spacework.html?id=${id}`;
             },
@@ -21,13 +21,13 @@ export const notesController = {
                     titleModal.innerText = note.title;
                 }
 
-                const deleteFile = document.getElementById('delete-file');
-                if (deleteFile) {
-                    deleteFile.onclick = () => { 
+                const btnDelete = document.getElementById('delete-file');
+                if (btnDelete) {
+                    btnDelete.onclick = () => { 
                         idNotesSelection = note.id;
                         notesModel.delete(idNotesSelection);
 
-                        /* Cerrar modal */
+                        /* Cerrar modal al borrar una nota */
                         const modalNoteOptions = document.getElementById('container-note-options');
                         modalNoteOptions.classList.remove('show');
 
@@ -42,8 +42,6 @@ export const notesController = {
     initEditor() {
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
-        console.log(urlParams);
-        console.log(id);
 
         // Obtiene la nota mediante su id e inyecta su contenido en el editor
         if (id) {

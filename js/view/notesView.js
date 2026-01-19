@@ -18,6 +18,7 @@ export const notesView = {
                     <p>${note.date}</p>
                 </button>
             `;
+
             card.onclick = () => onClickNote(note.id);
 
             card.oncontextmenu = (event) => {

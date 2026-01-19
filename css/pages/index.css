@@ -4,41 +4,45 @@ blockquote {
 }
 
 .welcome {
-    margin: 10px 0;
-    padding: 0;
+    padding-top: 30px;
     font-size: 200%;
     font-weight: 700;
 }
 
+/* --- Actions --- */
+
+.button-new-note {
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 100px;
+    border: none;
+    flex-shrink: 0; /*Flexbox: le ordena que no se modifiquen las medidas para adaptarse al espacio*/
+    margin: 20px 0;
+    background-color: #d2c09b;
+    font-size: 20px;
+    color: white;
+}
+
+/* --- file cards --- */
+
 .files {
     display: flex;
     flex-direction: row;
-    gap: 15px;
-}
-
-.button-new-note {
-    min-width: auto;
-    min-height: auto;
-}
-
-.note-container {
-    margin: 20px;
-    display: flex;
     flex-wrap: wrap;
     gap: 15px;
 }
 
 .note-card {
     max-width: 90px;
-    margin-right: 20px;
+    margin: 10px 10px 0 0;
+}
+
+.icon-note {
+    width: 90px;
 }
 
 h3, p{
     margin: 0;
     font-size: 12px;
     font-weight: 400;
-}
-
-.icon-note {
-    width: 90px;
 }

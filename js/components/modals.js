@@ -1,19 +1,15 @@
 /*Funcion para los eventos de cada modal */
 export function initModalEvents() {
-    const modalBase = document.getElementById("modal");
-
-    function renderClick(btn, modalId) {
-        if (btn && modalId) {
-            btn.onclick = () => modalId.classList.toggle('show');
+    function renderClick(btn, modal) {
+        if (btn && modal) {
+            btn.addEventListener('click', () => {
+                modal.classList.toggle('show');
+            });
+            btn.addEventListener('contextmenu', (event) => {
+                event.preventDefault();
+                modal.classList.toggle('show');
+            });
         }
-    }
-
-    function renderContextMenu(btn, modalId) {
-        if (btn && modalId) {
-            btn.addEventListener('contextmenu', () => {
-                modalId.classList.toggle('show');
-            })
-        }   
     }
 
     /* Boton menu para crear un nuevo archivo en index.html */
@@ -34,15 +30,15 @@ export function initModalEvents() {
 
     renderClick(btnFormat, modalFormat);
 
-    /* Click derecho para ver menu de las operaciones sobre un archivo en index.html */
-    const btnCardNote = document.getElementById('note-container');
-    const modalNoteOptions = document.getElementById('container-note-options');
+    /* Clic derecho sobre una nota para ver las operaciones */
+    const btnNote = document.getElementById('files');
+    const modalOptions = document.getElementById('container-note-options');
 
-    renderContextMenu(btnCardNote, modalNoteOptions);
+    renderClick(btnNote, modalOptions);
 
     /* Boton cerrar modal */ 
     const closeButtons = document.querySelectorAll('.close-btn');
-    
+
     closeButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             const modalMenu = btn.closest('.hidden');

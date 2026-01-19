@@ -14,7 +14,7 @@ body.is-ready {
     font-family: Open Sans, sans-serif;
 }
 
-h1, h2, h3, span, p, button{
+h1, h2, h3, span, p, button, .welcome{
     color: #656058;
     font-family: Open Sans, sans-serif;
 }
