@@ -1,55 +1,45 @@
 /*Funcion para los eventos de cada modal */
 export function initModalEvents() {
-    function renderClick(btn, modal) {
-        if (btn && modal) {
-            btn.addEventListener('click', () => {
-                modal.classList.toggle('show');
-            });
-        }
+    // Abrir modal
+    if (document) {
+        document.addEventListener('click', (event) => {
+            const trigger = event.target.closest('[data-open-modal]');
+
+            if (trigger) {
+                const modalId = trigger.dataset.openModal; // ID del modal para crear notas o folders
+                const modal = document.getElementById(modalId);
+
+                if (modal) {
+                    modal.classList.add('show');
+                }
+            }
+        })
     }
-
-    /* Boton menu para crear un nuevo archivo en index.html */
-    const btnNewNote = document.getElementById('button-new-note');
-    const modalNewNote = document.getElementById('container-new-note');
-
-    renderClick(btnNewNote, modalNewNote);
-
-    /*Boton menu para insertar contenido multimedia en el editor*/
-    const btnInsert = document.getElementById('insert-btn');
-    const modalInsert = document.getElementById('container-insert');
-
-    renderClick(btnInsert, modalInsert);
-
-    /*Boton menu para modificar el formato en el editor*/
-    const btnFormat = document.getElementById('format-btn');
-    const modalFormat = document.getElementById('container-format');
-
-    renderClick(btnFormat, modalFormat);
-
-    /* Click derecho en nota */
-    const fileContainer = document.getElementById('files')
     
+    // Abrir modal con clic derecho
+    const fileContainer = document.getElementById('files');
+
     if (fileContainer) {
         fileContainer.addEventListener('contextmenu', (event) => {
             const note = event.target.closest('.note-card');
             const modalOptions = document.getElementById('container-note-options');
 
+            event.preventDefault();
+
             if (note && modalOptions) {
-                modalOptions.classList.toggle('show');
+                modalOptions.classList.add('show');
             }
         })
     }
 
-    /* Boton cerrar modal */ 
-    const closeButtons = document.querySelectorAll('.close-btn');
+    // Cerrar modal
+    document.addEventListener('click', (event) => {
+        const closeButtons = event.target.closest('.close-btn');
 
-    closeButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const modalMenu = btn.closest('.hidden');
+        if (closeButtons) {
+            const modal = closeButtons.closest('.hidden');
 
-            if (modalMenu) {
-                modalMenu.classList.remove('show');
-            }
-        });
-    });
+            modal.classList.remove('show');
+        }
+    })
 }
