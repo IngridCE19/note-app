@@ -5,10 +5,6 @@ export function initModalEvents() {
             btn.addEventListener('click', () => {
                 modal.classList.toggle('show');
             });
-            btn.addEventListener('contextmenu', (event) => {
-                event.preventDefault();
-                modal.classList.toggle('show');
-            });
         }
     }
 
@@ -30,11 +26,19 @@ export function initModalEvents() {
 
     renderClick(btnFormat, modalFormat);
 
-    /* Clic derecho sobre una nota para ver las operaciones */
-    const btnNote = document.getElementById('files');
-    const modalOptions = document.getElementById('container-note-options');
+    /* Click derecho en nota */
+    const fileContainer = document.getElementById('files')
+    
+    if (fileContainer) {
+        fileContainer.addEventListener('contextmenu', (event) => {
+            const note = event.target.closest('.note-card');
+            const modalOptions = document.getElementById('container-note-options');
 
-    renderClick(btnNote, modalOptions);
+            if (note && modalOptions) {
+                modalOptions.classList.toggle('show');
+            }
+        })
+    }
 
     /* Boton cerrar modal */ 
     const closeButtons = document.querySelectorAll('.close-btn');
