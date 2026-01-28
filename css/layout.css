@@ -1,3 +1,4 @@
+/* Estado de la página */
 body {
     opacity: 0;
     transition: opacity 0.3s ease-out;
@@ -7,24 +8,35 @@ body.is-ready {
     opacity: 1;
     display: flex;
     flex-direction: row;
-    margin: 0;
+    margin-left: 9.38rem;
     width: 100%;
     height: 100vh;
     background-color: #f4f1dd;
+    color: #656058;
+    color: #656058;
     font-family: Open Sans, sans-serif;
 }
 
-main {
-    margin-left: 150px;
-}
-
+/* Formatos */
 h1, h2, h3, span, p, button, .welcome{
     color: #656058;
     font-family: Open Sans, sans-serif;
 }
 
-button {
+.icon, button {
     cursor: pointer;
+}
+
+button{
     border: none;
     background-color: transparent;
+}
+
+.icon {
+    width: 24px;   /* Tamaño obligatorio */
+    height: 24px;
+    stroke: #656058; /* O el color que desees para el icono */
+    color: #656058; 
+    display: inline-block;
+    z-index: 1000;
 }

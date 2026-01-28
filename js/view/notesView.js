@@ -13,7 +13,9 @@ export const notesView = {
             card.className = 'note-card';
             card.innerHTML = `
                 <button>
-                    <img src="assets/bitmap.png" class="icon-note" alt="icon note">
+                    <svg class="icon">
+                        <title>Icon note</title><use href="assets/icons.svg#icon-note"></use>
+                    </svg>
                     <h3>${note.title}</h3>
                     <p>${note.date}</p>
                 </button>
@@ -22,7 +24,6 @@ export const notesView = {
             card.onclick = () => onClickNote(note.id);
 
             card.oncontextmenu = (event) => {
-                event.preventDefault();
                 onRightClick(note.id, event);
             }; 
 

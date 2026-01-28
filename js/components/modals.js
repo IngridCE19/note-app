@@ -10,10 +10,14 @@ export function initModalEvents() {
                 const modal = document.getElementById(modalId);
 
                 if (modal) {
+                    const rect = trigger.getBoundingClientRect();
+                    modal.style.top = `${rect.top + 20}px`;
+                    modal.style.left = `${rect.left + rect.width + 20}px`;
+
                     modal.classList.add('show');
                 }
             }
-        })
+        });
     }
     
     // Abrir modal con clic derecho
@@ -27,19 +31,23 @@ export function initModalEvents() {
             event.preventDefault();
 
             if (note && modalOptions) {
+                const rect = note.getBoundingClientRect();
+                modalOptions.style.top = `${rect.top + 20}px`;
+                modalOptions.style.left = `${rect.left + rect.width + 20}px`;
+                    
                 modalOptions.classList.add('show');
             }
-        })
+        });
     }
 
     // Cerrar modal
     document.addEventListener('click', (event) => {
-        const closeButtons = event.target.closest('.close-btn');
+        const closeButtons = event.target.closest('.icon-close');
 
         if (closeButtons) {
-            const modal = closeButtons.closest('.hidden');
+            const modal = closeButtons.closest('.modal');
 
             modal.classList.remove('show');
         }
-    })
+    });
 }

@@ -6,101 +6,75 @@
     <title>Modales</title>
 </head>
 <body>
-    <div id="container-create" class="hidden" >
-        <div class="option-item">
-            <h2 id="options-title" class="options-title">Options</h2>
-            <button class="close-btn button" aria-label="Close new file menu">
-                <img src="assets/close.png" class="btn-icon" alt="Close" />
-            </button>
+    <div id="container-create" class="modal">
+        <div class="modal-content-area">
+            <h2 class="modal-title">Options</h2>
+            <a href="/spacework.html" class="container-item">
+                <svg class="icon icon-modal"><title>Icon note</title><use href="assets/icons.svg#icon-note"></use></svg>
+                <span>New note</span>
+            </a>
         </div>
-        <div class="option-item">
-            <button id="new-folder" class="button" aria-label="new folder option">
-                <img src="assets/folder.png" class="btn-icon" alt="New folder" />
-                <a href="#" class="text-modal">New folder</a>
-            </button>
-        </div>
-        <div class="option-item">
-            <button id="new-note" class="button" aria-label="new note option">
-                <img src="assets/bitmap.png" class="btn-icon" alt="New note" />
-                <a href="/spacework.html" class="text-modal">New note</a>
-            </button>
-        </div>
+        <button class="close-btn" aria-label="Close menu">
+            <svg class="icon icon-close"><title>Icon close</title><use href="assets/icons.svg#icon-close"></use></svg>
+        </button>
     </div>
 
-    <div id="container-note-options" class="hidden">
-        <div class="option-item">
-            <h2 id="name-file" class="name-title"></h2>
-            <button class="close-btn button" aria-label="Close new file menu">
-                <img src="assets/close.png" class="btn-icon" alt="Close" />
+    <div id="container-note-options" class="modal">
+        <div class="modal-content-area">
+            <h2 id="name-file" class="modal-title"></h2>
+            <button id="delete-file" class="container-item" aria-label="delete file">
+                <svg class="icon icon-modal"><title>Icon delete</title><use href="assets/icons.svg#icon-delete"></use></svg>
+                <span>Delete</span>
             </button>
         </div>
-        <div class="option-item">
-            <button id="delete-file" class="button" aria-label="delete file">
-                <img src="assets/eliminar.png" class="btn-icon" alt="Delete file" />
-                <a href="#" class="text-modal">Delete file</a>
-            </button>
-        </div>
+        <button class="close-btn" aria-label="Close menu">
+            <svg class="icon icon-close"><title>Icon close</title><use href="assets/icons.svg#icon-close"></use></svg>
+        </button>
     </div>
     
-    <div id="container-insert" class="hidden">
-        <div class="option-item">
-            <h2 id="options-title" class="options-title">Insert</h2>
-            <button class="close-btn button" aria-label="Close insert menu">
-                <img src="assets/close.png" class="btn-icon" alt="Close" />
+    <div id="container-insert" class="modal">
+        <div class="modal-content-area">
+            <h2 class="modal-title">Insert</h2>
+            <button class="container-item" aria-label="new image insert">
+                <svg class="icon icon-modal"><title>Icon image</title><use href="assets/icons.svg#icon-image"></use></svg>
+                <span>Image</span>
+            </button>
+            <button class="container-item" aria-label="new video insert">
+                <svg class="icon icon-modal"><title>Icon video</title><use href="assets/icons.svg#icon-video"></use></svg>
+                <span>Video</span>
+            </button>
+            <button class="container-item" aria-label="new audio insert">
+                <svg class="icon icon-modal"><title>Icon audio</title><use href="assets/icons.svg#icon-audio"></use></svg>
+                <span>Audio</span>
             </button>
         </div>
-        <div class="option-item">
-            <button id="new-image" class="button" aria-label="new image insert">
-                <img src="assets/insert-picture-icon.png" class="btn-icon" alt="New picture" />
-                <a href="#" class="text-modal">Image</a>
-            </button>
-        </div>
-        <div class="option-item">
-            <button id="new-video" class="button" aria-label="new video insert">
-                <img src="assets/video.png" class="btn-icon" alt="New video" />
-                <a href="#" class="text-modal">Video</a>
-            </button>
-        </div>
-        <div class="option-item">
-            <button id="new-audio" class="button" aria-label="new audio insert">
-                <img src="assets/volumen.png" class="btn-icon" alt="New audio" />
-                <a href="#" class="text-modal">Audio</a>
-            </button>
-        </div>
+        <button class="close-btn" aria-label="Close menu">
+            <svg class="icon icon-close"><title>Icon close</title><use href="assets/icons.svg#icon-close"></use></svg>
+        </button>
     </div>
 
-    <div id="container-format" class="hidden">
-        <div class="option-item">
-            <h2 id="options-title" class="options-title">Format</h2>
-            <button class="close-btn button" aria-label="Close insert menu">
-                <img src="assets/close.png" class="btn-icon" alt="Close" />
+    <div id="container-format" class="modal">
+        <div class="modal-content-area">
+            <h2 class="modal-title">Format</h2>
+            <button class="container-item" aria-label="Font bold">
+                <span style="font-weight: 800;">Bold</span>
+            </button>
+            <button class="container-item" aria-label="Font italic">
+                <span style="font-style: italic;">Italic</span>
+            </button>
+            <button class="container-item" aria-label="Font underline">
+                <spanstyle="text-decoration: underline;">Underline</span>
+            </button>
+            <button class="container-item" aria-label="Font list">
+                <span>• List</span>
+            </button>
+            <button class="container-item" aria-label="Font check">
+                <span>☐ Check</span>
             </button>
         </div>
-        <div class="option-item">
-            <button id="font-bold" class="button" aria-label="Font bold">
-                <a href="#" class="text-modal" style="font-weight: 800;">Bold</a>
-            </button>
-        </div>
-        <div class="option-item">
-            <button id="font-italic" class="button" aria-label="Font italic">
-                <a href="#" class="text-modal" style="font-style: italic;">Italic</a>
-            </button>
-        </div>
-        <div class="option-item">
-            <button id="font-underline" class="button" aria-label="Font underline">
-                <a href="#" class="text-modal" style="text-decoration: underline;">Underline</a>
-            </button>
-        </div>
-        <div class="option-item">
-            <button id="font-list" class="button" aria-label="Font list">
-                <a href="#" class="text-modal">• List</a>
-            </button>
-        </div>
-        <div class="option-item">
-            <button id="font-check" class="button" aria-label="Font check">
-                <a href="#" class="text-modal">☐ Check</a>
-            </button>
-        </div>
+        <button class="close-btn" aria-label="Close menu">
+            <svg class="icon icon-close"><title>Icon close</title><use href="assets/icons.svg#icon-close"></use></svg>
+        </button>
     </div>
 </body>
 </html> 

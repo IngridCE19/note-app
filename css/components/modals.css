@@ -1,44 +1,58 @@
-.hidden {
-    opacity: 0;
+.modal {
+    /* Posicionamiento */
+    position: fixed;
+    transform: scale(0.7);
+
+    /* Layout */
+    max-width: 15%;
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.25rem;
+    background-color: rgba(210, 192, 155, 0.9);
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 25px rgba(75, 71, 63, 0.2);
+
+    /* Estado */
     visibility: hidden;
-    transform: translateY(0px);
-    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
 }
 
-.show {
+.modal.show {
     opacity: 1;
     visibility: visible;
-    transform: translate(-15%, 50%);
-    background-color: rgb(210, 192, 155, 0.5);
-    border-radius: 20px;
-    padding: 20px;
-    height: min-content;
-    display: block;
+    transform: scale(1);
 }
 
-/*Modal new note/file and insert*/
-.option-item {
+.modal-content-area {
     display: flex;
-    padding-bottom: 20px;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
-.options-title {
-    padding-right: 80px;
+/* link to spacework */
+.container-item {
+    display: flex;
+    align-items: center;
+    margin-top: 0.85rem;
 }
 
-.name-title {
-    font-size: 1pc;
-    min-width: 170px;
+.modal-title {
+    padding-right: 1.5rem;
 }
 
-.button, 
-.btn-icon {
-    padding-right: 10px;
-    border: none;
-    background-color: rgb(210, 192, 155, 0);
-    height: 20px;
+.icon-modal {
+    margin-right: 0.5rem;
+    padding: 0;
 }
 
-.text-modal {
-    font-size: 18px;
+/* container button close */
+.close-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon-close {
+    padding: 0;
 }
