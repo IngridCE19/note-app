@@ -24,10 +24,14 @@ export const notesController = {
                 const btnDelete = document.getElementById('delete-file');
                 if (btnDelete) {
                     btnDelete.onclick = () => { 
-                        idNotesSelection = note.id;
-                        notesModel.delete(idNotesSelection);
-
-                        /* Cerrar modal al borrar una nota */
+                        if (confirm("¿Estás seguro de que deseas eliminar esta nota?")) {
+                            // Nota borrada
+                            idNotesSelection = note.id;
+                            notesModel.delete(idNotesSelection);
+                        } else {
+                            alert("No se elimino la nota");
+                        }
+                        // Cerrar modal
                         const modalNoteOptions = document.getElementById('container-note-options');
                         modalNoteOptions.classList.remove('show');
 

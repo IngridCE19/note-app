@@ -31,7 +31,7 @@ export const notesView = {
         });
     },
 
-    // Recibe la nota (objeto 'my-note') e inyecta el valor de las claves title y content en los elementos con el id correspondiente
+    // Mostrar nota en el editor
     fillEditor(note) {
         if (!note) return;
         document.getElementById('title').innerText = note.title;
