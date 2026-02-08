@@ -1,28 +1,34 @@
-/*Funcion para los eventos de cada modal */
+// Función auxiliar para cerrar todos los modales abiertos
+function closeAllModals() {
+    const activeModals = document.querySelectorAll('.modal.show');
+    activeModals.forEach(modal => {
+        modal.classList.remove('show');
+    });
+}
+
 export function initModalEvents() {
-    // Abrir modal
-    if (document) {
-        document.addEventListener('click', (event) => {
-            const trigger = event.target.closest('[data-open-modal]');
+    // Abrir modal con click izquierdo
+    document.addEventListener('click', (event) => {
+        const trigger = event.target.closest('[data-open-modal]');
 
-            if (trigger) {
-                const modalId = trigger.dataset.openModal; // ID del modal para crear notas o folders
-                const modal = document.getElementById(modalId);
+        if (trigger) {
+            // Cerramos cualquier modal abierto antes de proceder
+            closeAllModals();
 
-                if (modal) {
-                    const rect = trigger.getBoundingClientRect();
-                    modal.style.top = `${rect.top + 20}px`;
-                    modal.style.left = `${rect.left + rect.width + 20}px`;
+            const modalId = trigger.dataset.openModal;
+            const modal = document.getElementById(modalId);
 
-                    modal.classList.add('show');
-                }
+            if (modal) {
+                const rect = trigger.getBoundingClientRect();
+                modal.style.top = `${rect.top + 20}px`;
+                modal.style.left = `${rect.left + rect.width + 20}px`;
+                modal.classList.add('show');
             }
-        });
-    }
-    
-    // Abrir modal con clic derecho
-    const fileContainer = document.getElementById('files');
+        }
+    });
 
+    // Abrir modal con clic derecho (Context Menu)
+    const fileContainer = document.getElementById('files');
     if (fileContainer) {
         fileContainer.addEventListener('contextmenu', (event) => {
             const note = event.target.closest('.note-card');
@@ -31,23 +37,31 @@ export function initModalEvents() {
             event.preventDefault();
 
             if (note && modalOptions) {
+                closeAllModals();
+
                 const rect = note.getBoundingClientRect();
                 modalOptions.style.top = `${rect.top + 20}px`;
                 modalOptions.style.left = `${rect.left + rect.width + 20}px`;
-                    
                 modalOptions.classList.add('show');
             }
         });
     }
 
-    // Cerrar modal
+    // Cerrar modal al hacer clic en botones de cierre o fuera de ellos
     document.addEventListener('click', (event) => {
-        const closeButtons = event.target.closest('.icon-close');
-
-        if (closeButtons) {
-            const modal = closeButtons.closest('.modal');
-
+        const closeButton = event.target.closest('.icon-close');
+        
+        // Si el usuario hace clic en el botón de cerrar
+        if (closeButton) {
+            const modal = closeButton.closest('.modal');
             modal.classList.remove('show');
+        }
+        
+        // Si el clic no fue en un disparador Y no fue dentro de un modal activo
+        if (!event.target.closest('[data-open-modal]') && 
+            !event.target.closest('.modal') && 
+            !event.target.closest('.note-card')) {
+            closeAllModals();
         }
     });
 }
