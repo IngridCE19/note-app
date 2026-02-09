@@ -51,6 +51,7 @@
 .close-btn {
     display: flex;
     justify-content: flex-end;
+    max-height: min-content;
 }
 
 .icon-close {

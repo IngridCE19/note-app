@@ -16,26 +16,8 @@ body.is-ready {
     font-family: Open Sans, sans-serif;
 }
 
-/* Formatos */
+/* Fuente para el texto */
 h1, h2, h3, span, p, button, .welcome{
     color: #656058;
     font-family: Open Sans, sans-serif;
-}
-
-.icon, button {
-    cursor: pointer;
-}
-
-button{
-    border: none;
-    background-color: transparent;
-}
-
-.icon {
-    width: 24px;   /* Tamaño obligatorio */
-    height: 24px;
-    stroke: #656058; /* O el color que desees para el icono */
-    color: #656058; 
-    display: inline-block;
-    z-index: 1000;
 }

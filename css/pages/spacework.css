@@ -20,14 +20,14 @@
 }
 
 /* note */
-.notes {
-    margin: 1.88rem 6.3rem;
-}
-
 .spacework {
     display: flex;
     flex-direction: column;
     justify-items: flex-start;
+}
+
+.editor {
+    margin: 1.88rem 6.3rem;
 }
 
 .title {

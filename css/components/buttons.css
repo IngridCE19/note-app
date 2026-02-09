@@ -1,0 +1,53 @@
+/* -- Estado normal -- */
+button{
+    border: none;
+    background-color: transparent;
+}
+
+.icon {
+    width: 24px;  
+    height: 24px;
+    stroke: #656058;
+    color: #656058;  
+    display: inline-block;
+    z-index: 1000;
+}
+
+/* -- feedback visual -- */
+
+/* estado hover y active */
+button,
+a {
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out; 
+    border-radius: 20px;
+}
+
+button:hover, 
+a:hover {
+    background-color: rgba(105, 73, 8, 0.2);
+}
+
+button:active,
+a:active {
+    transform: translateY(2px); /* Se mueve hacia abajo */
+}
+
+/* animacion sobre iconos del navbar */
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.icon-navbar:hover {
+    animation: zoom 2s ease-in-out infinite;
+}
